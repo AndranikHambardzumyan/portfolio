@@ -1,0 +1,526 @@
+/*---Zeroing css default value---*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	letter-spacing: 2px;
+}
+
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	user-select: none;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*-----------------------------------------------------------*/
+
+@font-face {
+	font-family: 'Chalk';
+	src: url('../fonts/chawp.ttf');
+}
+
+:root {
+  --chalk-board: #31614B;
+}
+
+body {
+	position: absolute;
+	background-color: var(--chalk-board);
+  background-image: url(../images/background/chalk-board-green-1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+	transition: background-image 1s;
+} 
+
+#game-board {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	user-select: none;
+}
+
+.start-btn {
+	font-family: 'Chalk';
+	user-select: none;
+	height: 55px;
+	background: none;
+	font-size: 45px;
+	color: #fff;
+	transition: color 0.3s;
+	line-height: 55px;
+	margin-right: 20px;
+}
+
+#start-game{
+	width: 470px;
+	margin-left: 20px;
+}
+
+.start-btn:hover {
+	color: rgb(187, 187, 187);
+	transition: color 0.3s;
+}
+
+#background-blur {
+	position: relative;
+	top: 0;
+	left: 0;
+	filter: blur(40px);
+  -webkit-filter: blur(40px);
+	z-index: 2;
+	user-select: none;
+}
+
+.cage-x {
+  background-size: 80% 80%;
+	background-image: url(../images/x1.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 1;
+
+	animation: linear;
+  animation-name: draw-x-o;
+	animation-duration: 0.2s;
+}
+
+.cage-o {
+  background-size: 80% 80%;
+	background-image: url(../images/o1.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 1;
+
+	animation: linear;
+  animation-name: draw-x-o;
+  animation-duration: 0.2s;
+}
+
+.winners {
+	background-size: 70% 70%;
+	background-color: var(--chalk-board);
+	border: 3px solid #fff;
+	border-radius: 7px;
+
+	animation: linear;
+  animation-name: winners-animation;
+  animation-duration:2s;
+}
+
+.h-line {
+	position: absolute;
+  left: 0px;
+  z-index: 1;
+	width: inherit;
+  height: 10px;
+  background: url(../images/h-line-groupe.png);
+	user-select: none;
+	z-index: 1;
+
+	animation: linear;
+  animation-name: draw-h-line;
+	animation-duration: 0.2s;
+}
+
+.v-line {
+	position: absolute;
+  top: 0px;
+  z-index: 1;
+	width: 10px;
+  height: inherit;
+  background: url(../images/v-line-groupe.png);
+	user-select: none;
+	z-index: 1;
+
+	animation: linear;
+  animation-name: draw-v-line;
+	animation-duration: 0.2s;
+}
+
+@keyframes draw-h-line {
+  0% {
+		width: 0px;
+  }
+  100% {
+		width: inherit;
+  }
+}
+
+@keyframes draw-v-line {
+  0% {
+		height: 0px;
+  }
+  100% {
+		height: inherit;
+  }
+}
+
+@keyframes draw-x-o {
+	100% {
+		transform: scale(1);
+  }
+  50% {
+		transform: scale(0.7);
+  }
+	100% {
+		transform: scale(1);
+  }
+}
+
+@keyframes winners-animation {
+	0% {
+		transform: scale(1);
+  }
+	50% {
+		transform: scale(0.3);
+  }
+	100% {
+		transform: scale(1);
+  }
+}
+
+/* -------Main Container------- */
+
+.main-cont {
+	font-family: 'Chalk', 'Arial', 'sans-serif';
+  font-weight: normal;
+	color:#fff;
+	position: absolute;
+	top: 30px;
+	left: 700px;
+	width: 700px;
+	text-align: center;
+	user-select: none;
+}
+
+@media screen and (max-width: 1500px) {
+  .main-cont {
+		top: 730px;
+		left: 0;
+  }
+}
+
+h1 {
+  font-size: 70px;
+}
+
+/* -------menu settings container------- */
+
+.settings-icon {
+	transition: transform 0.7s;
+}
+
+.settings-icon:hover {
+	transform: rotate(90deg) translateZ(0);
+}
+
+.line {
+	width: 500px;
+  height: 10px;
+}
+
+.m-s-c-upper {
+  background: url(../images/h-line-groupe.png) 0 0;
+	margin-top: 10px;
+}
+
+.settings-cont {
+	width: 500px;
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	margin-top: 10px;
+	margin-left: 100px;
+}
+
+.m-s-btn-cont {	
+	width: 220px;
+	height: 50px;
+	display: inline-block;
+}
+
+.m-s-btn {
+  font-size: 40px;
+	line-height: 40px;
+	background-color: transparent;
+	color: #fff;
+  display: inline-block;
+}
+
+.m-s-btn:hover {
+  color:#C7C7C7;
+	cursor: pointer;
+}
+
+.m-s-btn:active {
+	color:#C7C7C7;
+}
+
+.m-s-c-under {
+  background: url(../images/h-line-groupe.png) 0 20px;
+	margin-top: 10px;
+}
+
+#menu-cont, #settings-cont {
+	width: 500px;
+}
+
+h2 {
+	font-size: 25px;
+	margin-top: 10px;
+}
+
+.m-c-under {
+  background: url(../images/h-line-groupe.png) 0 50px;
+	margin-top: 15px;
+}
+
+.s-c-under {
+  background: url(../images/h-line-groupe.png) 0 90px;
+	margin-top: 15px;
+}
+
+.s-under-line {
+  background: url(../images/h-line-groupe.png) 0 10px;
+	margin: 15px 0;
+}
+
+.sel {
+	font-family: inherit;
+  font-size: 25px;
+	border: 2px solid #fff;
+	border-radius: 7px;
+	background-color: var(--chalk-board);
+	color: #fff;
+	transition: background-color 1s;
+}
+
+.sel:hover, .sel:focus {
+	border-color: #C7C7C7;
+	cursor: pointer;
+}
+
+.sub-menu-cont {
+	margin-top: 20px;
+	/* border: 1px solid black; */
+}
+
+.label {
+	font-size: 25px;
+}
+
+#game-board-size {
+	margin-right: 21px;
+}
+
+#winning {
+	margin-right: 27px;
+	width: 60px;
+}
+
+#first-move {
+	margin-right: 65px;
+}
+
+#set-gamer-mode {
+	margin-left: 0px;
+}
+
+#game-difficulty {
+	margin-left: -4px;
+}
+
+.label-gamer-mode {
+	font-size: 25px;
+	margin-left: -12px;
+}
+
+.label-game-difficulty {
+	font-size: 25px;
+	margin-left: 9px;
+}
+
+/* -------settings ------- */
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding: 7px 110px 7px 0;
+	margin-right: 12px;
+  cursor: pointer;
+  font-size: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkbox {
+  position: absolute;
+  top: -1px;
+  left: 284px;
+  height: 40px;
+  width: 40px;
+	border: 2px solid #fff;
+	border-radius: 7px;
+	background-color: var(--chalk-board);
+	color: #fff;
+	transition: background-color 1s;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkbox {
+  background-color: var(--chalk-board);
+	border-color: #C7C7C7;
+	transition: background-color 1s;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkbox {
+  background-color: var(--chalk-board);
+	transition: background-color 1s;
+}
+
+/* Create the checkbox/indicator (hidden when not checked) */
+.checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkbox when checked */
+.checkbox-container input:checked ~ .checkbox:after {
+  display: block;
+}
+
+/* Style the checkbox/indicator */
+.checkbox-container .checkbox:after {
+  left: 10px;
+  top: 1px;
+  width: 15px;
+  height: 25px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.mute-win-lose-tie-label {
+  padding: 7px 171px 7px 0;
+}
+
+.mute-all {
+  padding: 7px 15px 7px 0;
+}
+
+/* -------score table------- */
+.score-table {
+	display: inline-block;
+	font-size: 30px;
+	margin: 10px 35px 0 0;
+	width: 400px;
+}
+
+.score-table th {
+  padding: 7px 70px;
+}
+
+#o-wins-td, #x-wins-td{
+	text-align: left;
+	width: 110px;
+	padding-left: 7px;
+}
+
+.x-o-td {
+	text-align: right;
+}
+
+.cont-last-game-p {
+	font-family: 'Chalk';
+	user-select: none;
+	font-size: 30px;
+	color: #fff;
+	line-height: 30px;
+	padding: 30px 0;
+}
+
+#start-new-last-game-cont {
+	width: 700px;
+	text-align: center;
+	margin-top: 80px;
+}
+
+.stress-level-p {
+	margin-top: 10px;
+	font-size: 50px;
+}
+
+.stress-level-cont {
+	/* margin-top: 10px; */
+}
+
+.stress-level-scale {
+	margin-top: 25px;
+	margin-left: 190px;
+	width: 320px;
+	height: 255px;
+	background-image: url(../images/stress-level.png);
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.arrow-left {
+	position: absolute;
+	left: 82px;
+	bottom: -10px;
+	transition-duration: 1000ms;
+}
+
+.arrow-right {
+	position: absolute;
+	left: 168px;
+	bottom: -10px;
+	transition-duration: 1000ms;
+}

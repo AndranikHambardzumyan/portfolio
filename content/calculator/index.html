@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="formCalc">
+    <table>
+      <caption> 
+        <input id="calcDisplay" class="display" type="text"  readonly>
+      </caption>
+      <tr>
+        <th><button class="button orange" onclick="cleaner()">AC</button></th>
+        <th><button class="button darkGrey" onclick="plusMinus()">+/-</button></th> 
+        <th><button class="button darkGrey" onclick="division()">&#247</button></th>
+        <th><button class="button darkGrey" onclick="multiplication()">&#215</button></th>
+      </tr>
+      <tr>
+        <th><button class="button" onclick="type7()">7</button></th>
+        <th><button class="button" onclick="type8()">8</button></th> 
+        <th><button class="button" onclick="type9()">9</button></th>
+        <th><button class="button darkGrey" onclick="minus()">-</button></th>
+      </tr>
+      <tr>
+        <th><button class="button" onclick="type4()">4</button></th>
+        <th><button class="button" onclick="type5()">5</button></th> 
+        <th><button class="button" onclick="type6()">6</button></th>
+        <th><button class="button darkGrey" onclick="plus()">+</button></th>
+      </tr>
+      <tr>
+        <th><button class="button" onclick="type1()">1</button></th>
+        <th><button class="button" onclick="type2()">2</button></th> 
+        <th><button class="button" onclick="type3()">3</button></th>
+        <th rowspan="2"><button class="button orange equal" onclick="equal()">=</button></th>
+      </tr>
+      <tr>
+        <th colspan="2"><button class="button zero" onclick="type0()">0</button></th>
+        <th><button class="button" onclick="typeDot()">.</button></th>
+      </tr>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

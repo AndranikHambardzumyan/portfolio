@@ -1,0 +1,153 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Anton', sans-serif;
+	color: black;
+	font-size: 16px;
+}
+
+p {
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+ul, li {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+section {
+	padding-top: 113px	
+}
+
+.container {
+	width: 1170px;
+	margin: 0 auto; 
+}
+
+.header {
+  padding-top: 57px;
+  background: url(../images/header-bg.jpg) no-repeat center top / cover;
+  padding-bottom: 322px;
+}
+
+header a {
+  color: #fff;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.menu li {
+  margin-right: 40px;
+}
+
+.tel {
+  font-size: 17px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 69px;
+}
+
+.offer {
+  font-family: 'Anton', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 216px;
+}
+
+
+.offer p {
+font-size: 30px;
+letter-spacing: 0.1em;
+}
+
+.offer h1 {
+  font-size: 100px;
+  letter-spacing: 0.05em;
+  margin-bottom: 19px;
+	margin-top: -9px;
+  }
+
+  .btn {
+    display: block;
+    font-size: 17px;
+    text-align: center;
+    letter-spacing: 0.2em;
+    padding: 17px 47px;
+    border: 1px solid #fff;
+    width: 238px;
+    transition: all 0.5s ease;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background: #fff;
+      color: #000;
+  }
+
+  .container h2 {
+    font-size: 50px;
+    margin-bottom: 58px;
+  }
+
+  .container h3 {
+    font-size: 25px;
+    margin-bottom: 28px;
+  }
+
+  .desc-left, .desc-right {
+    width: 567px;
+  }
+
+  .description {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .description p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.62em;
+  }
+
+  .galery {
+    margin-top: 67px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-text {
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    padding: 114px 0;
+  }
+
+  .footer-text p {
+    margin-right: 67px;
+  }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/lcd-display-style.css">
+  <link rel="title icon" type="image/png" href="./images/title-icon.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+</head>
+<body>
+  <div class="display-buttons-container">
+    <div class="container">
+      <div id="lcd0" class="lcd1 marg"></div>
+      <div id="lcd1" class="lcd2 marg"></div>
+      <div class="two-dot marg">
+        <div id="dot1" class="dot dot1"></div>
+        <div id="dot2" class="dot dot2"></div>
+      </div>
+      <div id="lcd2" class="lcd3 marg"></div>
+      <div id="lcd3" class="lcd4 marg"></div>
+      <div class="dot-down marg">
+        <div id="dot3" class="dot"></div>
+      </div>
+      <div id="lcd4" class="lcd5 marg"></div>
+      <div id="lcd5" class="lcd6 smarg"></div>
+    </div>
+
+    <div class="buttons-container">
+      <div class="container">
+        <button id="btn-onOff" class="off" onclick="stateToggle()">
+          <i class="fas fa-power-off"></i>
+        </button>
+        <button id="btn-start" class="start-off">Start</button>
+        <button id="btn-stop" class="stop-off">Stop</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="label-container" hidden>
+    <div class="label label-n">
+      <span>№</span>
+    </div>
+    <div class="label label-total">
+      <span>Total</span>
+    </div>
+    <div class="label label-interval">
+      <span>Interval</span>
+    </div>
+  </div>
+
+  <div id="list-panel-container">
+    <div class="list"></div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

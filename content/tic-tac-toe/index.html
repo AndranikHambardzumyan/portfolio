@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="title icon" type="image/png" href="./images/title-icon.png">
+</head>
+<body>
+	<audio id="draw-x-sound">
+		<source src="./sound/drawX.wav" type="audio/mpeg">
+	</audio>
+  <audio id="draw-o-sound">
+		<source src="./sound/drawO.wav" type="audio/mpeg">
+	</audio>
+  <audio id="select-sound">
+		<source src="./sound/select.wav" type="audio/mpeg">
+	</audio>
+  <audio id="game-win-sound">
+		<source src="./sound/game-win.wav" type="audio/mpeg">
+	</audio>
+  <audio id="game-lose-sound">
+		<source src="./sound/game-lose.wav" type="audio/mpeg">
+	</audio>
+  <audio id="game-tie-sound">
+		<source src="./sound/game-tie.wav" type="audio/mpeg">
+	</audio>
+  <audio id="draw-line-sound">
+		<source src="./sound/draw-line.wav" type="audio/mpeg">
+	</audio>
+
+  <div id="start-new-last-game-cont">
+    <button id="start-new-game" class="start-btn">start new game</button>
+    <div id="continue-last-game-cont" hidden>
+      <p class="cont-last-game-p">or</p>
+      <button id="continue-last-game" class="start-btn">continue last game</button>
+    </div>
+  </div>
+
+
+  <img id="background-blur" src="./images/background-blur.png" width="700" height="700" alt="background-blur" hidden draggable="false">
+
+  <div id="game-board"></div>
+
+  <div class="main-cont">
+    <h1>Tic tac toe</h1>
+
+    <img class="m-s-c-upper line" src="./images/1px1px.png" width="1" height="1" alt="horizontal line">
+
+    <table class="score-table">
+      <tr>
+        <th colspan="2">score</th>
+        <th>tie</th>
+      </tr>
+      <tr>
+        <td class="x-o-td">X -</td>
+        <td id="x-wins-td">0</td>
+        <td id="tie-td" rowspan="2">0</td>
+      </tr>
+      <tr>
+        <td class="x-o-td">O -</td>
+        <td id="o-wins-td">0</td>
+      </tr>
+    </table>
+
+    <img class="m-c-under line" src="./images/1px1px.png" width="1" height="1" alt="horizontal line">
+
+    <div class="settings-cont">
+      <button id="start-game" class="start-btn" hidden>back to board</button>
+
+      <button id="reload-btn" class="m-s-btn">
+        <img id="reload-icon" class="settings-icon" src="./images/reload.png" width="55" height="55" alt="reload" hidden draggable="false">
+      </button>
+
+      <button id="settings-btn" class="m-s-btn">
+        <img id="settings-icon" class="settings-icon" src="./images/settings.png" width="55" height="55" alt="settings"  hidden draggable="false">
+      </button>
+    </div>
+
+    <div id="settings-cont" hidden>
+      <div id="sub-settings-cont">
+        <img class="m-c-under line" src="./images/1px1px.png" width="1" height="1" alt="horizontal line">
+        <h2>- - - - - settings - - - - -</h2>
+
+        <div class="sub-menu-cont">
+          <label class="label" for="gbSize">board size -</label>
+          <select id="game-board-size" class="sel" name="gbSize"></select>
+        </div>
+
+        <div class="sub-menu-cont">
+          <label class="label" for="winning">winning -</label>
+          <select id="winning" class="sel" name="winning"></select>   
+        </div>
+
+        <div class="sub-menu-cont">
+          <label class="label" for="first-move">first move -</label>
+          <select id="first-move" class="sel" name="first-move">
+            <option value="x/o">x/o</option>
+            <option value="x">x</option>
+            <option value="o">o</option>
+          </select>   
+        </div>
+
+        <div class="sub-menu-cont">
+          <select id="game-mode" class="sel">
+            <option value="gamer-vs-computer">Gamer &emsp;vs&emsp; computer</option>
+            <option value="gamer1-vs-gamer2">Gamer - 1 &emsp;vs&emsp; Gamer - 2</option>
+          </select> 
+        </div>
+
+        <div id="gamer-computer-mode-cont">
+          <div class="sub-menu-cont">
+            <label class="label-gamer-mode" for="gamer-x-o">gamer -</label>
+            <select id="set-gamer-mode" class="sel" name="gamer-x-o">
+              <option value="x">x</option>
+              <option value="o">o</option>
+            </select> 
+          </div>
+
+          <div class="sub-menu-cont">
+            <label class="label-game-difficulty" for="difficulty">difficulty -</label>
+            <select id="game-difficulty" class="sel" name="difficulty">
+              <option value="hard">hard</option>
+              <option value="medium">medium</option>
+              <option value="easy">easy</option>
+            </select> 
+          </div>
+        </div>
+      </div>
+
+      <img class="s-c-under line" src="./images/1px1px.png" width="1" height="1" alt="horizontal line">
+
+      <h2>- - - mute sounds - - -</h2>
+
+      <div class="sub-menu-cont">
+        <label class="checkbox-container mute-all">all -
+          <input id="mute-all" type="checkbox">
+          <span class="checkbox"></span>
+        </label>
+      </div>
+
+      <div class="sub-menu-cont">
+        <label class="checkbox-container mute-win-lose-tie-label">win, lose, tie -
+          <input id="mute-win-lose-tie" type="checkbox">
+          <span class="checkbox"></span>
+        </label>
+      </div>
+
+      <img class="m-s-c-under line" src="./images/1px1px.png" width="1" height="1" alt="horizontal line">
+
+      <div class="sub-menu-cont">
+        <label class="label" for="background-img">background -</label>
+        <select id="background-images" class="sel" name="background-img">
+          <option value="0">green-1</option>
+          <option value="1">green-2</option>
+          <option value="2">green-3</option>
+          <option value="3">brown</option>
+          <option value="4">red</option>
+          <option value="5">blue-1</option>
+          <option value="6">blue-2</option>
+          <option value="7">blue-3</option>
+          <option value="8">blue-4</option>
+          <option value="9">black-1</option>
+          <option value="10">black-2</option>
+          <option value="11">black-3</option>
+          <option value="12">black-4</option>
+        </select>   
+      </div>
+
+      <img class="s-under-line line" src="./images/1px1px.png" width="1" height="1" alt="horizontal line">
+
+    </div>
+
+    <div class="stress-level-cont">
+      <img class="s-c-under line" src="./images/1px1px.png" width="1" height="1" alt="horizontal line">
+      <p class="stress-level-p">stress level</p>
+      <div class="stress-level-scale">
+        <img id="arrow-left" class="arrow-left" src="./images/arrow-left.png" width="66" height="30" alt="arrow-left" draggable="false">
+        <img id="arrow-right" class="arrow-right" src="./images/arrow-right.png" width="66" height="30" alt="arrow-right" draggable="false">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

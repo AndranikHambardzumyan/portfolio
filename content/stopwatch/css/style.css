@@ -1,0 +1,186 @@
+body {
+  background-color: rgb(233, 233, 233);
+  margin: 0;
+  padding-top: 230px;    
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.display-buttons-container {
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  user-select: none;
+}
+
+.buttons-container {
+  display: block;
+}
+
+.container {
+  padding: 20px 0 10px 0;
+  display: inline-flex;
+  width: 460px;
+}
+
+.off {
+  font-size: 40px;
+  background-color: black;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  user-select: none;
+
+  animation-name: on-off-btn-states-off;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.start-off, .stop-off {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  color: rgb(27, 52, 27);
+  background-color: black;
+  border: 1px solid rgb(27, 52, 27);
+  outline: none;
+  width: 150px;
+  border-radius: 25px;
+  user-select: none;
+}
+
+.on {
+  font-size: 40px;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+
+  animation-name: on-off-btn;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.start-on, .stop-on {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  background-color: black;
+
+  outline: none;
+  width: 150px;
+  border-radius: 25px;
+  cursor: pointer;
+  user-select: none;
+
+  animation-name: start-stop-btn-states-on;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.stop-off, .stop-on {
+  margin-left: 20px;
+}
+
+.start-off, .start-on {
+  margin-left: 85px;
+}
+
+@keyframes on-off-btn {
+  0%{
+    color: rgb(165, 0, 0);
+  }
+  95%{
+    color: rgb(27, 52, 27);
+  }
+  100%{
+    color: rgb(0, 250, 50);
+  }
+}
+
+@keyframes on-off-btn-states-off {
+  0%{
+    color: rgb(165, 0, 0);
+  }
+  100%{
+    color: rgb(83, 0, 0);
+  }
+}
+
+@keyframes start-stop-btn-states-on {
+  0%{
+    color: rgb(27, 52, 27);
+    border: 1px solid rgb(27, 52, 27);
+  }
+  100%{
+    color: rgb(0, 250, 50);
+    border: 1px solid rgb(0, 250, 50);
+  }
+}
+
+#label-container {
+  position: sticky;
+  top: 222px;
+  width: 460px;
+  height: 50px;
+  margin: 0px auto;
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 50px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(0, 250, 50);
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 27px;
+  user-select: none;
+}
+
+.label {
+  display: inline-block;
+  text-align: center;
+}
+
+.label-n {
+  margin-left: 50px;
+}
+
+.label-total {
+  margin-left: 65px;
+}
+
+.label-interval {
+  margin-left: 83px;
+}
+
+#list-panel-container {
+  padding-top: 7px;
+  width: 460px;
+  margin: 0px auto;
+  font-size: 30px;
+}
+
+#list-panel-container > div:nth-child(even) {
+  background-color: rgb(238, 238, 238);
+  border-radius: 18px;
+}
+
+#list-panel-container > div:nth-child(odd) {
+background-color: rgb(214, 214, 214);
+border-radius: 18px;
+}
+
+.line-number-block {
+  text-align: right;
+  width: 70px;
+  display: inline-block;
+}

@@ -1,0 +1,138 @@
+.lcd0, .lcd1, .lcd2, .lcd3, .lcd4, .lcd5, .two-dot , .dot-down {
+  display: inline-block;
+}
+
+.marg + .marg {
+  margin-left: 15px;
+}
+
+.smarg {
+  margin-left: 14px;
+  margin-top: 58px;
+}
+
+.h {
+  width: 35px;
+  height: 0;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  margin-left: 6px;
+}
+
+.h11 {
+  border-bottom: 5px solid;
+}
+
+.h12 {
+  border-top: 5px solid;
+}
+
+.v {
+  margin-top: -4px;
+  display: inline-block;
+  width: 0;
+  height: 35px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+
+.v11 {
+  border-right: 5px solid;
+  margin-right: -4px;
+}
+
+.v12 {
+  border-left: 5px solid;
+  margin-right: 37px;
+}
+
+.v21 {
+  border-right: 5px solid;
+  margin-right: -4px;
+}
+
+.v22 {
+  border-left: 5px solid;
+}
+
+.h21 {
+  border-bottom: 5px solid;
+  margin-top: -7px;
+}
+
+.h22 {
+  border-top: 5px solid;
+}
+
+.sh {
+  width: 17px;
+  height: 0;
+  border-right: 3.5px solid transparent;
+  border-left: 3.5px solid transparent;
+  margin-left: 3px;
+}
+
+.sh11 {
+  border-bottom: 2.5px solid;
+}
+
+.sh12 {
+  border-top: 2.5px solid;
+}
+
+.sv {
+  margin-top: -2px;
+  display: inline-block;
+  width: 0;
+  height: 17px;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+}
+
+.sv11 {
+  border-right: 2.5px solid;
+  margin-right: -4px;
+}
+
+.sv12 {
+  border-left: 2.5px solid;
+  margin-right: 16px;
+}
+
+.sv21 {
+  border-right: 2.5px solid;
+  margin-right: -4px;
+}
+
+.sv22 {
+  border-left: 2.5px solid;
+}
+
+.sh21 {
+  border-bottom: 2.5px solid;
+  margin-top: -5.5px;
+}
+
+.sh22 {
+  border-top: 2.5px solid;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgb(10, 35, 10);
+}
+
+.dot1 {
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.dot-down {
+  margin-top: 104px;
+}
+
+.e0, .e1, .e2, .e3, .e4, .e5, .e6, .e7, .e8, .e9, .e10, .e11, .e12, .e13 {
+  color: rgb(10, 35, 10);
+}

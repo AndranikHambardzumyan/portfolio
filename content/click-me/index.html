@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Funny Game "CLICK"</title>
+	<link rel="title icon" type="image/png" href="./images/title-icon.png">
+  <link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+</head>
+<body>
+	<audio id="click-sound">
+		<source src="./sound/clicksoundeffect.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="jump-sound">
+		<source src="./sound/jumping.wav" type="audio/mpeg">
+	</audio>
+	<audio id="game-over-sound">
+		<source src="./sound/game-over.wav" type="audio/mpeg">
+	</audio>
+	<audio id="game-winner-sound">
+		<source src="./sound/game-win-sound-effect.mp3" type="audio/mpeg">
+	</audio>
+
+	<!-- menu area -->
+	<section class="section-1">
+    <div class="menu-container">
+			<h1>
+				"CLICK ME" Funny Game
+			</h1>
+			<div class="btns-container">
+				<div class="btn-container">
+					<button id="restart" class="restart btn" onclick="restart()">Restart</button>
+				</div>
+				<div class="btn-container">
+					<button id="pause-btn" class="pause btn" onclick="pause()">Pause</button>
+				</div>
+				<div class="btn-container">
+					<button id="mute" class="mute btn" onclick="allMute()"><i class="fas fa-volume-up"></i></button>
+				</div>
+			</div>
+			<div class="radio-buttons-container">
+				  <label id="clicks-radio-buttons" class="label-container">Clicks</label>
+					<label class="label-container">10
+						<input class='input-radio-10' type="radio" checked="checked" name="radio">
+						<span class="checkmark"></span>
+					</label>
+					<label class="label-container">20
+						<input class='input-radio-20' type="radio" name="radio">
+						<span class="checkmark"></span>
+					</label>
+					<label class="label-container">40
+						<input class='input-radio-40' type="radio" name="radio">
+						<span class="checkmark"></span>
+					</label>
+			</div>
+			<div class="failed-container">
+				<span class="failed-span">Failed-</span>
+				<span id="failed-count" class="failed-count">0</span>
+			</div>
+			<div class="clicks-container">
+				<span class="clicks-span">Clicks-</span>
+				<span id="clicks-count" class="clicks-count">0</span>
+			</div>			
+			<div class="progress-container">
+				<progress id="progress" class="progress" value="0" max="40"></progress>
+			</div>
+		</div>
+	</section>
+
+	<!-- game area -->
+	<section class="section-2">
+		<div class="game-zone">
+			<button id="click" class="click" onkeydown="keyDownHandler(event)" onmousedown="clickMe()">
+				Click
+			</button>
+		</div>
+	</section>
+	
+	<script src="./js/script.js"></script>
+</body>
+</html>
